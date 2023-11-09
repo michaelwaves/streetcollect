@@ -16,17 +16,25 @@ export default function GetStarted() {
       router.push("/feed");
     }
   }, [signedIn]);
+    return (
+        <div className=" w-full h-full bg-p-5">
+            <div className="flex relative items-center justify-center flex-col gap-2 w-full h-full rounded-t-3xl bg">
+                <span className="flex flex-row items-center justify-center gap-2 absolute top-6 left-8">
+                    <h1>StreetCollect</h1>
+                    <BsCircleFill />
+                </span>
+                <h1>Get Started</h1>
+                <div className="flex flex-col sm:flex-row gap-4">
+                    <button onClick={handleSignIn} className="login-button">Login</button>
+                </div>
+                <a href="https://arxiv.org/pdf/2310.02446.pdf" target="_blank" className="text-sm text-gray-400">About</a>
+                <div className="absolute bottom-0 w-full flex items-center justify-center h-20">
+                    <div className="flex flex-row gap-2 text-sm text-gray-400">
+                        <Link href="/legal">Terms of use</Link>
+                        |
+                        <Link href="/legal/privacy">Privacy Policy</Link>
+                    </div>
 
-  return (
-    <div className="w-full h-full bg-black">
-      <div className="flex relative items-center justify-center flex-col gap-2 w-full h-full rounded-t-3xl bg-black text-white">
-        <span className="flex flex-row items-center justify-center gap-2 absolute top-6 left-8">
-          <h1>StreetCollect</h1>
-          <BsCircleFill />
-        </span>
-        <div className="flex flex-col-reverse sm:flex-row justify-between sm:w-[80%]">
-          <section className="mx-auto sm:mx-0 gap-4 sm:gap-0 flex flex-col text-center mt-5 sm:mt-0 my-auto">
-            <button className="get-started">Get Started</button>
 
             <button onClick={handleSignIn} className="login-button">
               Login

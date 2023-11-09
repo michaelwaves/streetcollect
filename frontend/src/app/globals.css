@@ -4,7 +4,15 @@
 
 @layer base {
   h1 {
-    @apply font-bold text-xl
+    @apply font-bold text-xl text-gray-800 dark:text-white
+  }
+
+  h2 {
+    @apply font-bold text-lg text-gray-800 dark:text-white
+  }
+
+  p {
+    @apply text-sm text-gray-800 dark:text-white
   }
 }
 
@@ -12,8 +20,12 @@
   .login-button {
     @apply font-bold bg-blue-500 text-white text-center w-52 h-12 rounded-md
   }
+
   .get-started {
     @apply font-bold bg-p-3 text-white text-center w-52 h-12 rounded-md
+      }
+  .bg {
+    @apply dark:bg-gray-800 bg-white
   }
 }
 

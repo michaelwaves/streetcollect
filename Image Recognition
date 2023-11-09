@@ -1,0 +1,21 @@
+from transformers import pipeline
+
+# Ensuring transformers is installed: pip install transformers
+
+# Choosing a model for image classification. For example, using Google's Vision Transformer.
+model_name = "google/vit-base-patch16-224-in21k"
+
+# Loading the image classification pipeline with the chosen model
+image_classifier = pipeline(task="image-classification", model=model_name)
+
+# Specifying the path to the image
+image_path = "path_to_your_image.jpg"  # Replace with the path to the image
+
+# Use the pipeline to classify the image
+classification_results = image_classifier(image_path)
+
+# Print the classification results
+for result in classification_results:
+    label = result['label']
+    score = result['score']
+    print(f"Label: {label}, Score: {score:.2f}")
