@@ -2,8 +2,10 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { User, getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore, doc, getDoc, addDoc, setDoc, collection } from "firebase/firestore";
 import { useState, useEffect } from "react";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -38,3 +40,34 @@ const useAuth = () => {
 }
 
 export { app, auth, db, useAuth };
+const provider = new GoogleAuthProvider();
+
+export const handleSignIn = () => {
+    signInWithPopup(auth, provider).then((result) => {
+        const u = result.user;
+        checkAndAddUsertoFirestore(u);
+    }).catch((error) => {
+        console.log(error)
+    })
+}
+
+export const handleSignOut = () => {
+    auth.signOut().then(() => {
+        console.log("signed out")
+    }).catch((error) => {
+        console.log(error)
+    })
+}
+
+export const checkAndAddUsertoFirestore = async (user: any) => {
+    const userRef = doc(db, "users", user.uid);
+    const docSnap = await getDoc(userRef);
+    if (!docSnap.exists()) {
+        await setDoc(userRef, {
+            name: user.displayName,
+            email: user.email,
+            photoURL: user.photoURL,
+            uid: user.uid,
+        });
+    }
+}
