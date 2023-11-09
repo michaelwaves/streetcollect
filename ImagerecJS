@@ -1,0 +1,19 @@
+// Function to upload the image and get classification results
+async function classifyImage() {
+    const input = document.querySelector('input[type="file"]');
+    const data = new FormData();
+    data.append('file', input.files[0]);
+
+    try {
+        const response = await fetch('http://localhost:8000/classify-image/', {
+            method: 'POST',
+            body: data
+        });
+        const result = await response.json();
+        console.log(result);
+        // Process the results here
+        // For example, display them in the UI
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
