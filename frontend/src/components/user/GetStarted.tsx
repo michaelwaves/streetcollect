@@ -19,8 +19,8 @@ export default function GetStarted() {
     }, [signedIn])
 
     return (
-        <div className="w-full h-full bg-p-5">
-            <div className="flex relative items-center justify-center flex-col gap-2 w-full h-full rounded-t-3xl bg-white">
+        <div className=" w-full h-full bg-p-5">
+            <div className="flex relative items-center justify-center flex-col gap-2 w-full h-full rounded-t-3xl bg">
                 <span className="flex flex-row items-center justify-center gap-2 absolute top-6 left-8">
                     <h1>StreetCollect</h1>
                     <BsCircleFill />

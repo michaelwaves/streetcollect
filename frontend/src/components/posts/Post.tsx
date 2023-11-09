@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
-
+import { BiUpArrow, BiDownArrow } from 'react-icons/bi'
+import { SlLocationPin } from 'react-icons/sl'
 interface PostProps {
     postId: string;
     userId: string;
@@ -35,33 +36,25 @@ const Post: React.FC<PostProps> = ({
 
     return (
         <div className="border rounded-lg p-4 mb-4">
-            <Image src={imageUrl} alt={title} width={400} height={400} className="rounded-lg mb-4" />
+
             <h2 className="text-lg font-semibold mb-2">{title}</h2>
             <p className="text-gray-600 mb-2">{description}</p>
-
-            <div className="flex items-center mb-2">
-                <button className="mr-2 bg-green-500 hover:bg-green-700 text-white py-1 px-4 rounded" onClick={onUpvote}>
-                    Upvote
+            <Image src={imageUrl} alt={title} width={400} height={400} className="rounded-lg mb-4" />
+            <div className="flex items-center mb-2 flex-row gap-4 justify-center">
+                <button className=" bg-green-500 hover:bg-green-700 text-white py-1 px-4 rounded" onClick={onUpvote}>
+                    <BiUpArrow />
                 </button>
+                <div className="mt-2 text-gray-600">{upvotes}</div>
                 <button className="bg-red-500 hover:bg-red-700 text-white py-1 px-4 rounded" onClick={onDownvote}>
-                    Downvote
+                    <BiDownArrow />
                 </button>
+                <div className="flex items-center text-gray-500 cursor-pointer" onClick={openGoogleMaps}>
+                    <SlLocationPin className="bg-s-3 w-8 h-8 rounded-full p-2 text-white" />
+                </div>
+
             </div>
 
-            <div className="flex items-center text-gray-500 cursor-pointer" onClick={openGoogleMaps}>
-                <svg
-                    className="w-4 h-4 fill-current mr-2"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="black"
-                >
-                    <path d="M0 0h24v24H0z" fill="none" />
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-14c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 7c-1.11 0-2-.89-2-2s.89-2 2-2 2 .89 2 2-.89 2-2 2z" />
-                </svg>
-                {`(${location.latitude}, ${location.longitude})`}
-            </div>
 
-            <div className="mt-2 text-gray-600">Upvotes: {upvotes}</div>
         </div>
     );
 };
