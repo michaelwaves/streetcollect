@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <path style="stroke: rgb(0, 0, 0); fill: rgb(186, 255, 185); stroke-width: 19px;" d="M 249.747 43.264 C 249.747 43.264 120.491 200 120.491 300 C 120.491 400 149.747 469.42 249.747 469.419 C 349.747 469.418 379.227 400 378.1 300 C 376.973 200 252.002 44.392 249.747 43.264 Z" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 0)"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-width: 19px;" d="M 249.747 469.635 L 249.747 40.543" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 0)"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-width: 19px;" d="M 374.511 369.635 L 256.854 371.573" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 0)"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-width: 19px;" d="M 250.393 300 L 379.393 300" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 0)"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-width: 19px;" d="M 250.393 249.868 L 369.246 249.747" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 0)"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-width: 19px;" d="M 249.101 200 L 351.039 200" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, 0)"/>
+</svg>

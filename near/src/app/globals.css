@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-p-5 text-gray-800 font-[400] text-base;
+  }
+
+  h1 {
+    @apply md:text-7xl text-5xl text-gray-800 font-heading;
+  }
+
+  h2 {
+    @apply md:text-5xl  text-4xl font-[500] text-gray-800 font-heading;
+  }
+
+  a {
+    @apply w-fit md:px-4 p-0 relative inline-block font-heading hover:after:scale-x-100 after:absolute after:bottom-[-0.3rem] after:left-0 after:transform after:scale-x-0 after:w-full after:transition-transform after:duration-200 after:origin-[0%_50%] after:h-[0.2rem] after:bg-white;
+  }
+
+
+  p {
+    @apply text-xl font-[400] font-body;
+  }
+input{
+  @apply text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-s-3 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 ring-p-4
+}
+  button{
+    @apply text-4xl md:text-3xl bg-s-3 p-4 rounded-xl text-white font-heading;
+  }
+}
+
+
+@layer components {
+  .animated-underline{
+    @apply w-fit md:px-4 p-0 relative inline-block font-heading hover:after:scale-x-100 after:absolute after:bottom-[-0.3rem] after:left-0 after:transform after:scale-x-0 after:w-full after:transition-transform after:duration-200 after:origin-[0%_50%] after:h-[0.2rem] after:bg-white;
+  }
+
+  .nav-element {
+    @apply text-lg font-[500] leading-normal py-[0.1rem] px-[1.2rem] rounded-[0.4rem] text-center justify-center items-center md:text-2xl lg:text-4xl;
+  }
+
+  .submit-button {
+    @apply text-2xl p-4 rounded-xl shadow-md bg-primary-dark
+  }
+
+  .flex-row-center {
+    @apply flex flex-row justify-center items-center
+  }
+
+  .flex-col-center {
+    @apply flex flex-col justify-center items-center
+  }
+
+  .red-button{
+    @apply font-heading sm:text-xl text-lg p-2 rounded-xl shadow-md bg-red-500
+  }
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
