@@ -35,20 +35,20 @@ const Post: React.FC<PostProps> = ({
     };
 
     return (
-        <div className="border rounded-lg p-4 mb-4">
+        <div className="border rounded-lg p-4 mb-4 bg">
 
-            <h2 className="text-lg font-semibold mb-2">{title}</h2>
-            <p className="text-gray-600 mb-2">{description}</p>
+            <h1 className="text-lg font-semibold mb-2">{title}</h1>
+            <p className=" mb-2">{description}</p>
             <Image src={imageUrl} alt={title} width={400} height={400} className="rounded-lg mb-4" />
             <div className="flex items-center mb-2 flex-row gap-4 justify-center">
                 <button className=" bg-green-500 hover:bg-green-700 text-white py-1 px-4 rounded" onClick={onUpvote}>
                     <BiUpArrow />
                 </button>
-                <div className="mt-2 text-gray-600">{upvotes}</div>
+                <div className="mt-2 text-gray-600 dark:text-gray-200">{upvotes}</div>
                 <button className="bg-red-500 hover:bg-red-700 text-white py-1 px-4 rounded" onClick={onDownvote}>
                     <BiDownArrow />
                 </button>
-                <div className="flex items-center text-gray-500 cursor-pointer" onClick={openGoogleMaps}>
+                <div className="flex items-center text-gray-500 dark:text-gray-100 cursor-pointer" onClick={openGoogleMaps}>
                     <SlLocationPin className="bg-s-3 w-8 h-8 rounded-full p-2 text-white" />
                 </div>
 
