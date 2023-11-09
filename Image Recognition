@@ -1,4 +1,5 @@
 from transformers import pipeline
+from fastapi.middleware.cors import CORSMiddleware
 
 # Ensuring transformers is installed: pip install transformers
 
@@ -19,3 +20,12 @@ for result in classification_results:
     label = result['label']
     score = result['score']
     print(f"Label: {label}, Score: {score:.2f}")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allows all origins
+    allow_credentials=True,
+    allow_methods=["*"],  // Allows all methods
+    allow_headers=["*"],  // Allows all headers
+)
+
